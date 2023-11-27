@@ -1,0 +1,67 @@
+<header>
+    <div class="cabecera">
+        <div class="logotipo">
+            <img src="./images/Logotipo.JPG">
+        </div>
+        <h1>Clínica Palermo</h1>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./registro-medicos.html">Registro de
+                        médicos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./registro-pacientes.html">Registro
+                        de
+                        pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./listado-pacientes">Pacientes
+                        registrados</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    <h2>Lista de citas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha de cita</th>
+                <th>Paciente</th>
+                <th>Telefono</th>
+                <th>Especialidad</th>
+                <th>Consultorio</th>
+                <th>Medico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se agrega el contenido dinamicamente a traves de Handlebars-->
+            {{#each resultado}}
+            <tr>
+                <td>{{formatoFecha fecha_cita}}</td>
+                <td>{{nombres}} {{apellidos}}</td>
+                <td>{{telefono}}</td>
+                <td>{{especialidad}}</td>
+                <td>{{consultorio}}</td>
+                <td>{{nombreMedico}} {{apellidoMedico}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <a href="./index.html"><input type="button" value="Volver"></a>
+</main>
+<footer>
+    <a href="https://twitter.com/?lang=es"><img src="./images/icons8-twitter.gif" class="gif"></a>
+    <a href="https://www.facebook.com/?locale=es_LA"><img src="./images/icons8-facebook.gif" class="gif"></a>
+</footer>
+<script src="../app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
